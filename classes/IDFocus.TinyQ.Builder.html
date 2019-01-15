@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>Documentation for IDFocus/PHP-TinyQBuilder</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">Documentation for IDFocus/PHP-TinyQBuilder</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/IDFocus.html">\IDFocus</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-494213983"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-494213983" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1671565320"></a>
+                                <a href="../namespaces/IDFocus.html" style="margin-left: 30px; padding-left: 0">IDFocus</a>
+            </div>
+            <div id="namespace-1671565320" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1707856892"></a>
+                                <a href="../namespaces/IDFocus.TinyQ.html" style="margin-left: 30px; padding-left: 0">TinyQ</a>
+            </div>
+            <div id="namespace-1707856892" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/IDFocus.TinyQ.Builder.html">Builder</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/IDFocus.TinyQ.html">\IDFocus\TinyQ</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\IDFocus\TinyQ</small>Builder</h1>
+                    <p><em>A helper class to allow easy programmatic construction of TinyQ expressions.</em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_greater" class="">greater()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_greaterOrEqual" class="">greaterOrEqual()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_less" class="">less()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_lessOrEqual" class="">lessOrEqual()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_notEqual" class="">notEqual()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_not" class="">not()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_like" class="">like()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_lparen" class="">lparen()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_rparen" class="">rparen()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_equal" class="">equal()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_reset" class="">reset()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_build" class="">build()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_escapeLike" class="">escapeLike()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_and" class="">and()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_or" class="">or()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant_GREATER" class="">GREATER</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant_GREATER_OR_EQUAL" class="">GREATER_OR_EQUAL</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant_LESS" class="">LESS</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant_LESS_OR_EQUAL" class="">LESS_OR_EQUAL</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant_NOT_EQUAL" class="">NOT_EQUAL</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant_NOT" class="">NOT</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant__AND" class="">_AND</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant__OR" class="">_OR</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant_LIKE" class="">LIKE</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant_LPAREN" class="">LPAREN</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant_RPAREN" class="">RPAREN</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant_EQUAL" class="">EQUAL</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant_ESCAPE_DOT" class="">ESCAPE_DOT</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant_ESCAPE_LIKE_WILDCARD_ONE" class="">ESCAPE_LIKE_WILDCARD_ONE</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant_ESCAPE_LIKE_WILDCARD_MULTIPLE" class="">ESCAPE_LIKE_WILDCARD_MULTIPLE</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant_LIKE_WILDCARD_ONE" class="">LIKE_WILDCARD_ONE</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#constant_LIKE_WILDCARD_MULTIPLE" class="">LIKE_WILDCARD_MULTIPLE</a><br />
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_createEscapedString" class="">createEscapedString()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method__and" class="">_and()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method__or" class="">_or()</a><br />
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#method_escape" class="">escape()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/IDFocus.TinyQ.Builder.html#property_queryString" class="">$queryString</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Builder.html"><div class="path-wrapper">Builder.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\IDFocus\TinyQ\Builder</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                                    <a id="constants" name="constants"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Constants</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_GREATER" name="constant_GREATER" class="anchor"></a>
+            <article id="constant_GREATER" class="constant">
+                <h3 class="">GREATER</h3>
+                <pre class="signature">GREATER</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_GREATER_OR_EQUAL" name="constant_GREATER_OR_EQUAL" class="anchor"></a>
+            <article id="constant_GREATER_OR_EQUAL" class="constant">
+                <h3 class="">GREATER_OR_EQUAL</h3>
+                <pre class="signature">GREATER_OR_EQUAL</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_LESS" name="constant_LESS" class="anchor"></a>
+            <article id="constant_LESS" class="constant">
+                <h3 class="">LESS</h3>
+                <pre class="signature">LESS</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_LESS_OR_EQUAL" name="constant_LESS_OR_EQUAL" class="anchor"></a>
+            <article id="constant_LESS_OR_EQUAL" class="constant">
+                <h3 class="">LESS_OR_EQUAL</h3>
+                <pre class="signature">LESS_OR_EQUAL</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_NOT_EQUAL" name="constant_NOT_EQUAL" class="anchor"></a>
+            <article id="constant_NOT_EQUAL" class="constant">
+                <h3 class="">NOT_EQUAL</h3>
+                <pre class="signature">NOT_EQUAL</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_NOT" name="constant_NOT" class="anchor"></a>
+            <article id="constant_NOT" class="constant">
+                <h3 class="">NOT</h3>
+                <pre class="signature">NOT</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant__AND" name="constant__AND" class="anchor"></a>
+            <article id="constant__AND" class="constant">
+                <h3 class="">_AND</h3>
+                <pre class="signature">_AND</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant__OR" name="constant__OR" class="anchor"></a>
+            <article id="constant__OR" class="constant">
+                <h3 class="">_OR</h3>
+                <pre class="signature">_OR</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_LIKE" name="constant_LIKE" class="anchor"></a>
+            <article id="constant_LIKE" class="constant">
+                <h3 class="">LIKE</h3>
+                <pre class="signature">LIKE</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_LPAREN" name="constant_LPAREN" class="anchor"></a>
+            <article id="constant_LPAREN" class="constant">
+                <h3 class="">LPAREN</h3>
+                <pre class="signature">LPAREN</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_RPAREN" name="constant_RPAREN" class="anchor"></a>
+            <article id="constant_RPAREN" class="constant">
+                <h3 class="">RPAREN</h3>
+                <pre class="signature">RPAREN</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_EQUAL" name="constant_EQUAL" class="anchor"></a>
+            <article id="constant_EQUAL" class="constant">
+                <h3 class="">EQUAL</h3>
+                <pre class="signature">EQUAL</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_ESCAPE_DOT" name="constant_ESCAPE_DOT" class="anchor"></a>
+            <article id="constant_ESCAPE_DOT" class="constant">
+                <h3 class="">ESCAPE_DOT</h3>
+                <pre class="signature">ESCAPE_DOT</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_ESCAPE_LIKE_WILDCARD_ONE" name="constant_ESCAPE_LIKE_WILDCARD_ONE" class="anchor"></a>
+            <article id="constant_ESCAPE_LIKE_WILDCARD_ONE" class="constant">
+                <h3 class="">ESCAPE_LIKE_WILDCARD_ONE</h3>
+                <pre class="signature">ESCAPE_LIKE_WILDCARD_ONE</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_ESCAPE_LIKE_WILDCARD_MULTIPLE" name="constant_ESCAPE_LIKE_WILDCARD_MULTIPLE" class="anchor"></a>
+            <article id="constant_ESCAPE_LIKE_WILDCARD_MULTIPLE" class="constant">
+                <h3 class="">ESCAPE_LIKE_WILDCARD_MULTIPLE</h3>
+                <pre class="signature">ESCAPE_LIKE_WILDCARD_MULTIPLE</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_LIKE_WILDCARD_ONE" name="constant_LIKE_WILDCARD_ONE" class="anchor"></a>
+            <article id="constant_LIKE_WILDCARD_ONE" class="constant">
+                <h3 class="">LIKE_WILDCARD_ONE</h3>
+                <pre class="signature">LIKE_WILDCARD_ONE</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_LIKE_WILDCARD_MULTIPLE" name="constant_LIKE_WILDCARD_MULTIPLE" class="anchor"></a>
+            <article id="constant_LIKE_WILDCARD_MULTIPLE" class="constant">
+                <h3 class="">LIKE_WILDCARD_MULTIPLE</h3>
+                <pre class="signature">LIKE_WILDCARD_MULTIPLE</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_queryString" name="property_queryString" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$queryString</h3>
+                <pre class="signature">$queryString : string</pre>
+                <p><em>Query string currently being created.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct() </pre>
+                <p><em>Construct an instance.</em></p>
+                
+
+                
+                
+                				
+                                                            <h4>Examples</h4>
+                                                                <h5>Example of creating a Buildquery</h5>
+                        <pre class="pre-scrollable">use \IDFocus\TinyQ\Builder;
+
+$builder = new Builder();
+
+$builder-&gt;not()
+        -&gt;equal(&#039;name&#039;, &#039;henry.aaron&#039;)
+        -&gt;or()
+        -&gt;lparen()
+        -&gt;greaterOrEqual(&#039;age&#039;, 18)
+        -&gt;and()
+        -&gt;LessOrEqual(&#039;age&#039;, 65)
+        -&gt;rparen();
+echo $builder-&gt;build(); // .tname.ehenry..aaron.o.sage.h18.aage.m65.f</pre>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_greater" name="method_greater" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">greater()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">greater(string  <span class="argument">$key</span>, mixed  <span class="argument">$value</span>) : \IDFocus\TinyQ\Builder</pre>
+                <p><em>Add the TinyQ equivalent of the &quot;&gt;&quot; operator to the expression.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>Property to search</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$value </td>
+                                <td><p>Searchterm</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/IDFocus.TinyQ.Builder.html">\IDFocus\TinyQ\Builder</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_greaterOrEqual" name="method_greaterOrEqual" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">greaterOrEqual()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">greaterOrEqual(string  <span class="argument">$key</span>, mixed  <span class="argument">$value</span>) : \IDFocus\TinyQ\Builder</pre>
+                <p><em>Add the TinyQ equivalent of the &quot;&lt;=&quot; operator to the expression.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>Property to search</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$value </td>
+                                <td><p>Searchterm</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/IDFocus.TinyQ.Builder.html">\IDFocus\TinyQ\Builder</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_less" name="method_less" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">less()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">less(string  <span class="argument">$key</span>, mixed  <span class="argument">$value</span>) : \IDFocus\TinyQ\Builder</pre>
+                <p><em>Add the TinyQ equivalent of the &quot;&lt;&quot; operator to the expression.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>Property to search</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$value </td>
+                                <td><p>Searchterm</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/IDFocus.TinyQ.Builder.html">\IDFocus\TinyQ\Builder</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_lessOrEqual" name="method_lessOrEqual" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">lessOrEqual()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">lessOrEqual(string  <span class="argument">$key</span>, mixed  <span class="argument">$value</span>) : \IDFocus\TinyQ\Builder</pre>
+                <p><em>Add the TinyQ equivalent of the &quot;&lt;=&quot; operator to the expression.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>Property to search</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$value </td>
+                                <td><p>Searchterm</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/IDFocus.TinyQ.Builder.html">\IDFocus\TinyQ\Builder</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_notEqual" name="method_notEqual" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">notEqual()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">notEqual(string  <span class="argument">$key</span>, mixed  <span class="argument">$value</span>) : \IDFocus\TinyQ\Builder</pre>
+                <p><em>Add the TinyQ equivalent of the &quot;!=&quot; operator to the expression.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>Property to search</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$value </td>
+                                <td><p>Searchterm</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/IDFocus.TinyQ.Builder.html">\IDFocus\TinyQ\Builder</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_not" name="method_not" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">not()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">not() : \IDFocus\TinyQ\Builder</pre>
+                <p><em>Add the TinyQ equivalent of the &quot;NOT&quot; operator to the expression.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/IDFocus.TinyQ.Builder.html">\IDFocus\TinyQ\Builder</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_like" name="method_like" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">like()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">like(string  <span class="argument">$key</span>, mixed  <span class="argument">$value</span>) : \IDFocus\TinyQ\Builder</pre>
+                <p><em>Add the TinyQ equivalent of the &quot;LIKE&quot; operator to the expression.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>Property to search</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$value </td>
+                                <td><p>Searchterm</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/IDFocus.TinyQ.Builder.html">\IDFocus\TinyQ\Builder</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_lparen" name="method_lparen" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">lparen()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">lparen() : \IDFocus\TinyQ\Builder</pre>
+                <p><em>Append the equivalent of a left parenthesis (the left grouping operator);</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/IDFocus.TinyQ.Builder.html">\IDFocus\TinyQ\Builder</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_rparen" name="method_rparen" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">rparen()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">rparen() : \IDFocus\TinyQ\Builder</pre>
+                <p><em>Append the equivalent of a right parenthesis (the right grouping operator);</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/IDFocus.TinyQ.Builder.html">\IDFocus\TinyQ\Builder</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_equal" name="method_equal" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">equal()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">equal(string  <span class="argument">$key</span>, mixed  <span class="argument">$value</span>) : \IDFocus\TinyQ\Builder</pre>
+                <p><em>Add the TinyQ equivalent of the &quot;==&quot; operator to the expression.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>Property to search</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$value </td>
+                                <td><p>Searchterm</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/IDFocus.TinyQ.Builder.html">\IDFocus\TinyQ\Builder</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_reset" name="method_reset" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">reset()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">reset() : \IDFocus\TinyQ\Builder</pre>
+                <p><em>Reset the instance so another expression can be built.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/IDFocus.TinyQ.Builder.html">\IDFocus\TinyQ\Builder</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_build" name="method_build" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">build()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">build() : string</pre>
+                <p><em>Return the TinyQ language expression.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_escapeLike" name="method_escapeLike" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">escapeLike()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">escapeLike(string  <span class="argument">$string</span>) : string</pre>
+                <p><em>Escape queries to be used in LIKE statements.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$string </td>
+                                <td><p>String to be escaped</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_and" name="method_and" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">and()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">and() : \IDFocus\TinyQ\Builder</pre>
+                <p><em></em></p>
+                <p>Add the TinyQ equivalent of the &quot;AND&quot; operator to the expression.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    \IDFocus\TinyQ\Builder
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_or" name="method_or" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">or()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">or() : \IDFocus\TinyQ\Builder</pre>
+                <p><em></em></p>
+                <p>Add the TinyQ equivalent of the &quot;OR&quot; operator to the expression.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    \IDFocus\TinyQ\Builder
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_createEscapedString" name="method_createEscapedString" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">createEscapedString()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">createEscapedString(string  <span class="argument">$key</span>, mixed  <span class="argument">$value</span>, string  <span class="argument">$operator</span>) : string</pre>
+                <p><em>Escape key and value query parts.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>Property to search</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$value </td>
+                                <td><p>Searchterm</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$operator </td>
+                                <td><p>TinyQ operator</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__and" name="method__and" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_and()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_and() : \IDFocus\TinyQ\Builder</pre>
+                <p><em>Add the TinyQ equivalent of the &quot;AND&quot; operator to the expression. Method for reserved `and` keyword.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/IDFocus.TinyQ.Builder.html">\IDFocus\TinyQ\Builder</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__or" name="method__or" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_or()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_or() : \IDFocus\TinyQ\Builder</pre>
+                <p><em>Add the TinyQ equivalent of the &quot;OR&quot; operator to the expression. Method for reserved `or` keyword.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/IDFocus.TinyQ.Builder.html">\IDFocus\TinyQ\Builder</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_escape" name="method_escape" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">escape()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">escape(string  <span class="argument">$string</span>) : string</pre>
+                <p><em>Escape the query paramaters.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$string </td>
+                                <td><p>String to be escaped</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">Builder.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Builder.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/IDFocus.html">\IDFocus</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on January 15th, 2019 at 20:19.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
