@@ -1,8 +1,8 @@
 <?php
 
-use \InterExperts\TinyQ\Builder;
+use \IDFocus\TinyQ\Builder;
 
-namespace InterExperts\TinyQ;
+namespace IDFocus\TinyQ;
 
 class BuilderTest extends \PHPUnit_Framework_TestCase{
 

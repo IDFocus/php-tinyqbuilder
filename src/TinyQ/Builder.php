@@ -1,10 +1,10 @@
 <?php
 /**
  * A helper class to allow easy programmatic construction of TinyQ expressions. 
- * @author InterExperts Webontwikkeling <webontwikkeling@interexperts.nl>
+ * @author IDFocus B.V. <nivo@idfoucs.nl>
  */
 
-namespace InterExperts\TinyQ;
+namespace IDFocus\TinyQ;
 
 /**
  * A helper class to allow easy programmatic construction of TinyQ expressions. 

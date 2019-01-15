@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpdoc>
-  <title>Documentation for InterExperts/PHP-TinyQBuilder</title>
+  <title>Documentation for IDFocus/PHP-TinyQBuilder</title>
   <parser>
     <target>built/doc</target>
   </parser>
