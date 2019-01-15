@@ -7,7 +7,7 @@
     verbose="true"
     >
     <testsuites>
-        <testsuite name="InterExperts PHP-TinyQBuilder Test Suite">
+        <testsuite name="IDFocus PHP-TinyQBuilder Test Suite">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>

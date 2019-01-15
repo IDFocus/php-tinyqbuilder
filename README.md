@@ -1,8 +1,8 @@
 # Implementing the TinyQ expressions in PHP
 
-[![Build Status](https://travis-ci.org/interexperts/php-tinyqbuilder.svg?branch=master)](https://travis-ci.org/interexperts/php-tinyqbuilder)
-[![Coverage Status](https://coveralls.io/repos/github/interexperts/php-tinyqbuilder/badge.svg?branch=master)](https://coveralls.io/github/interexperts/php-tinyqbuilder?branch=master)
-[![Code Climate](https://codeclimate.com/github/interexperts/php-tinyqbuilder/badges/gpa.svg)](https://codeclimate.com/github/interexperts/php-tinyqbuilder)
+[![Latest Stable Version](https://img.shields.io/packagist/v/idfocus/php-tinyqbuilder.svg?style=flat-square)](https://packagist.org/packages/idfocus/config)
+[![Total Downloads](https://img.shields.io/packagist/dt/idfocus/php-tinyqbuilder.svg?style=flat-square)](https://packagist.org/packages/idfocus/config)
+[![License](https://img.shields.io/packagist/l/idfocus/php-tinyqbuilder.svg?style=flat-square)](https://packagist.org/packages/idfocus/config)
 
 Class for making TinyQ expressions using PHP 
 
@@ -10,4 +10,4 @@ Find a reference [here](https://www.novell.com/developer/plugin-sdk/ref/restapi/
 
 # Documentation
 
-Up-to-date documentation can be found [here](https://interexperts.github.io/php-tinyqbuilder/classes/InterExperts.TinyQ.Builder.html).
+Up-to-date documentation can be found [here](https://idfocus.github.io/php-tinyqbuilder/classes/IDFocus.TinyQ.Builder.html).

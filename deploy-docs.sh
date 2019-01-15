@@ -2,12 +2,13 @@
 set -e # exit with nonzero exit code if anything fails
 
 # go to the out directory and create a *new* Git repo
+mkdir -p built/doc
 cd built/doc
 git init
 
 # inside this git repo we'll pretend to be a new user
 git config user.name "Travis CI"
-git config user.email "niels.de.blaauw@gmail.com"
+git config user.email "sveldhuisen@idfocus.nl"
 
 # The first and only commit to this new Git repo contains all the
 # files present with the commit message "Deploy to GitHub Pages".

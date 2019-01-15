@@ -1,5 +1,5 @@
 {
-    "name": "interexperts/php-tinyqbuilder",
+    "name": "idfocus/php-tinyqbuilder",
     "description": "TinyQ builder implementation for PHP",
     "type": "library",
     "license": "MIT",
@@ -10,13 +10,13 @@
     },
     "autoload": {
         "psr-4": {
-            "InterExperts\\": "src/"
+            "IDFocus\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "InterExperts Webontwikkeling",
-            "email": "webontwikkeling@interexperts.nl"
+            "name": "IDFocus B.V.",
+            "email": "nivo@idfocus.nl"
         }
     ],
     "require": {

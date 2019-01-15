@@ -2,7 +2,7 @@
 
 require_once(dirname(__FILE__) . '/../vendor/autoload.php');
 
-use \InterExperts\TinyQ\Builder;
+use \IDFocus\TinyQ\Builder;
 
 $builder = new Builder();
 
