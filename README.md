@@ -1,8 +1,8 @@
 # Implementing the TinyQ expressions in PHP
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/idfocus/php-tinyqbuilder.svg?style=flat-square)](https://packagist.org/packages/idfocus/config)
-[![Total Downloads](https://img.shields.io/packagist/dt/idfocus/php-tinyqbuilder.svg?style=flat-square)](https://packagist.org/packages/idfocus/config)
-[![License](https://img.shields.io/packagist/l/idfocus/php-tinyqbuilder.svg?style=flat-square)](https://packagist.org/packages/idfocus/config)
+[![Latest Stable Version](https://img.shields.io/packagist/v/idfocus/php-tinyqbuilder.svg?style=flat-square)](https://packagist.org/packages/idfocus/php-tinyqbuilder)
+[![Total Downloads](https://img.shields.io/packagist/dt/idfocus/php-tinyqbuilder.svg?style=flat-square)](https://packagist.org/packages/idfocus/php-tinyqbuilder)
+[![License](https://img.shields.io/packagist/l/idfocus/php-tinyqbuilder.svg?style=flat-square)](https://packagist.org/packages/idfocus/php-tinyqbuilder)
 
 Class for making TinyQ expressions using PHP 
 
