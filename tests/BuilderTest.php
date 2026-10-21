@@ -1,10 +1,8 @@
 <?php
 
-use \IDFocus\TinyQ\Builder;
-
 namespace IDFocus\TinyQ;
 
-class BuilderTest extends \PHPUnit_Framework_TestCase{
+class BuilderTest extends \PHPUnit\Framework\TestCase{
 
 	public function testCanBuild(){
 		$builder = new Builder();
@@ -119,7 +117,7 @@ class BuilderTest extends \PHPUnit_Framework_TestCase{
 
 	public function testThrowOnIllegalMethod(){
 		$builder = new Builder();
-		$this->setExpectedException(
+		$this->expectException(
 			'\BadMethodCallException'
 		);
 		$builder->illegalMethod();

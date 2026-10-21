@@ -4,9 +4,7 @@
     "type": "library",
     "license": "MIT",
     "require-dev": {
-        "phpunit/phpunit": "^4.8",
-        "phpdocumentor/phpdocumentor": "^2.8",
-        "satooshi/php-coveralls": "^1.0"
+        "phpunit/phpunit": "^12.5"
     },
     "autoload": {
         "psr-4": {
@@ -19,6 +17,8 @@
             "email": "nivo@idfocus.nl"
         }
     ],
-    "require": {
+    "require": {},
+    "scripts": {
+        "test": "@php vendor/bin/phpunit"
     }
 }

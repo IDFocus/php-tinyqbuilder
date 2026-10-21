@@ -1,0 +1,10 @@
+ext-dom       20031129   success 
+ext-filter    8.5.11     success 
+ext-json      8.5.11     success 
+ext-libxml    8.5.11     success 
+ext-mbstring  8.5.11     success 
+ext-phar      8.5.11     success 
+ext-tokenizer 8.5.11     success 
+ext-xmlwriter 8.5.11     success 
+php           8.5.11     success 
+Checking platform requirements for packages in the vendor dir

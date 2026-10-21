@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "check": "php8511",
+      "exit": 0
+    },
+    {
+      "check": "php855",
+      "exit": 0
+    },
+    {
+      "check": "composer-validate",
+      "exit": 0
+    },
+    {
+      "check": "composer-platform",
+      "exit": 0
+    },
+    {
+      "check": "app-filters",
+      "exit": 0,
+      "stderr": ""
+    }
+  ],
+  "lint_files": 5,
+  "lint_issues": [],
+  "source_sha256": "ea34ad101776ad2b4048caa217302549459be459bbf8fc2a7b95c519497657a2",
+  "composer_lock_sha256": "5629de671aaf9736b360b53a4f640d3367d0d99bdab71900ca40514a1988de6e"
+}

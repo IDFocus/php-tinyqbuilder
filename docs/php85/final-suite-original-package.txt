@@ -1,0 +1,189 @@
+PHPUnit 12.5.40 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+
+...............F.E.......E.......E.......E.......E.......E....... 65 / 84 ( 77%)
+E.....FFFFFFFFFFE..                                               84 / 84 (100%)
+
+Time: 00:00.017, Memory: 16.00 MB
+
+There were 8 errors:
+
+1) IDFocus\TinyQ\CompatibilityTest::testComparisonValuesPreserveLegacyCoercion@equal/null with data ('equal', '.e', null, '')
+ErrorException: str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:237
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:60
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:187
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:27
+
+2) IDFocus\TinyQ\CompatibilityTest::testComparisonValuesPreserveLegacyCoercion@notEqual/null with data ('notEqual', '.n', null, '')
+ErrorException: str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:237
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:60
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:120
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:27
+
+3) IDFocus\TinyQ\CompatibilityTest::testComparisonValuesPreserveLegacyCoercion@greater/null with data ('greater', '.g', null, '')
+ErrorException: str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:237
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:60
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:76
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:27
+
+4) IDFocus\TinyQ\CompatibilityTest::testComparisonValuesPreserveLegacyCoercion@greaterOrEqual/null with data ('greaterOrEqual', '.h', null, '')
+ErrorException: str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:237
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:60
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:87
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:27
+
+5) IDFocus\TinyQ\CompatibilityTest::testComparisonValuesPreserveLegacyCoercion@less/null with data ('less', '.l', null, '')
+ErrorException: str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:237
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:60
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:98
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:27
+
+6) IDFocus\TinyQ\CompatibilityTest::testComparisonValuesPreserveLegacyCoercion@lessOrEqual/null with data ('lessOrEqual', '.m', null, '')
+ErrorException: str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:237
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:60
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:109
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:27
+
+7) IDFocus\TinyQ\CompatibilityTest::testComparisonValuesPreserveLegacyCoercion@like/null with data ('like', '.k', null, '')
+ErrorException: str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:237
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:60
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:158
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:27
+
+8) IDFocus\TinyQ\CompatibilityTest::testNullEscapeLikeRetainsEmptyStringBehavior
+ErrorException: str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+
+/Users/sveldhuisen/Development/NIVO/nivo-neat-ui-php/vendor/idfocus/php-tinyqbuilder/src/TinyQ/Builder.php:253
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:55
+
+--
+
+There were 11 failures:
+
+1) IDFocus\TinyQ\BuilderTest::testCanEscapeLikes
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'name.ksome._text-'
++'name.ksome.._text.-'
+
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/BuilderTest.php:110
+
+2) IDFocus\TinyQ\CompatibilityTest::testComparisonValuesPreserveLegacyCoercion@like/decimal with data ('like', '.k', 12.5, '12....5')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'profile..name.k12....5'
++'profile..name.k12..5'
+
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:28
+
+3) IDFocus\TinyQ\CompatibilityTest::testComparisonValuesPreserveLegacyCoercion@like/unicode with data ('like', '.k', 'één.naam', 'één....naam')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'profile..name.kéén....naam'
++'profile..name.kéén..naam'
+
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:28
+
+4) IDFocus\TinyQ\CompatibilityTest::testLikeEscapingIsExplicit@unescaped wildcards with data ('some_text-', false, 'name.ksome_text-')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'name.ksome_text-'
++'name.ksome._text.-'
+
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:50
+
+5) IDFocus\TinyQ\CompatibilityTest::testLikeEscapingIsExplicit@explicit literals with data ('some_text-', true, 'name.ksome._text.-')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'name.ksome._text.-'
++'name.ksome.._text..-'
+
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:50
+
+6) IDFocus\TinyQ\CompatibilityTest::testLikeEscapingIsExplicit@dots and literals with data ('a.b_-', true, 'name.ka....b._.-')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'name.ka....b._.-'
++'name.ka..b.._..-'
+
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:50
+
+7) IDFocus\TinyQ\CompatibilityTest::testLikeEscapingIsExplicit@literal dot before underscore with data ('a._', true, 'name.ka....._')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'name.ka....._'
++'name.ka...._'
+
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:50
+
+8) IDFocus\TinyQ\CompatibilityTest::testLikeEscapingIsExplicit@trailing dot with data ('a.', false, 'name.ka....')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'name.ka....'
++'name.ka..'
+
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:50
+
+9) IDFocus\TinyQ\CompatibilityTest::testLikeEscapingIsExplicit@multiple dots with data ('a..b', false, 'name.ka........b')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'name.ka........b'
++'name.ka....b'
+
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:50
+
+10) IDFocus\TinyQ\CompatibilityTest::testLikeEscapingIsExplicit@literal underscore with wildcard suffix with data ('some_text', true, 'name.ksome._text-', '-')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'name.ksome._text-'
++'name.ksome.._text.-'
+
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:50
+
+11) IDFocus\TinyQ\CompatibilityTest::testLikeEscapingIsExplicit@literal dash with wildcard prefix with data ('some-text', true, 'name.k-some.-text', '', '-')
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-'name.k-some.-text'
++'name.k.-some..-text'
+
+/Users/sveldhuisen/Development/slim2-php8/tools/tinyq-check/package/tests/CompatibilityTest.php:50
+
+ERRORS!
+Tests: 84, Assertions: 129, Errors: 8, Failures: 11.

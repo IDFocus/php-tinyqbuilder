@@ -1,0 +1,49 @@
+{
+  "php_cgi": "PHP 8.5.11 (cgi-fcgi) (built: Oct 21 2026 15:06:49) (NTS)",
+  "passed": true,
+  "cases": [
+    {
+      "case": "wildcards",
+      "expected": "username.kjohn-doe_",
+      "actual": "username.kjohn-doe_",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "case": "dots",
+      "expected": "username.kfirst....last",
+      "actual": "username.kfirst....last",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "case": "combined filters",
+      "expected": "displayname.kA....B.ousername.kjohn-",
+      "actual": "displayname.kA....B.ousername.kjohn-",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "case": "equal field",
+      "expected": "status..account.estaged",
+      "actual": "status..account.estaged",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "case": "ignored input",
+      "expected": "",
+      "actual": "",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "case": "group filter",
+      "expected": "type.emanual.acode.kteam-",
+      "actual": "type.emanual.acode.kteam-",
+      "passed": true,
+      "errors": ""
+    }
+  ],
+  "external_requests": false
+}

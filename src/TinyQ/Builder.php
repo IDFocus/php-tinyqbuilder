@@ -50,20 +50,11 @@ class Builder{
 	 * @param string $operator TinyQ operator
 	 * @return string
 	 */
-	
-	/** protected function createEscapedString($key, $value, $operator){
-		return $this->escape($key) . $operator . $this->escape($value);
-	}*/
-
 	protected function createEscapedString($key, $value, $operator){
-    		$escapedKey = $this->escape($key);
-    		$escapedValue = $this->escape($value);
-
-    		if ($operator === self::LIKE) {
-        		$escapedValue = $this->escapeLike($escapedValue);
-    		}
-
-    		return $escapedKey . $operator . $escapedValue;
+		$escapedValue = $operator === self::LIKE
+            ? $this->escapeLikePattern($value)
+            : $this->escape($value);
+        return $this->escape($key) . $operator . $escapedValue;
 	}
 
 	/**
@@ -226,33 +217,45 @@ class Builder{
 	 * @param string $string String to be escaped
 	 * @return string
 	 */
-	/**protected function escape($string){
+	protected function escape($string){
+		// Preserve PHP's historical null-to-empty-string behavior without deprecations.
+		if ($string === null) {
+			$string = '';
+		}
+
 		$string = str_replace('.', self::ESCAPE_DOT, $string);
 		$string = str_replace('.' . self::LIKE_WILDCARD_MULTIPLE, self::LIKE_WILDCARD_MULTIPLE, $string);
 		$string = str_replace('.' . self::LIKE_WILDCARD_ONE, self::LIKE_WILDCARD_ONE, $string);
 		return $string;
-	}*/
-
-	protected function escape($string){
-	       $string = str_replace('.', self::ESCAPE_DOT, $string);
-	       $string = str_replace(self::LIKE_WILDCARD_MULTIPLE, self::ESCAPE_LIKE_WILDCARD_MULTIPLE, $string);
-	       $string = str_replace(self::LIKE_WILDCARD_ONE, self::ESCAPE_LIKE_WILDCARD_ONE, $string);
-	       return $string;
 	}
+
+    /**
+     * LIKE values pass through both the operand scanner and the pattern parser.
+     * Keep explicit wildcard escapes; literal dots need escaping in both layers.
+     */
+    private function escapeLikePattern($value)
+    {
+        return strtr($value === null ? '' : $value, array(
+            self::LIKE_WILDCARD_ONE => self::LIKE_WILDCARD_ONE,
+            self::LIKE_WILDCARD_MULTIPLE => self::LIKE_WILDCARD_MULTIPLE,
+            '.' => '....'
+        ));
+    }
+
 	/**
 	 * Escape queries to be used in LIKE statements.
 	 * @param string $string String to be escaped
 	 * @return string
 	 */
-	/**public function escapeLike($string){
+	public function escapeLike($string){
+		// Preserve PHP's historical null-to-empty-string behavior without deprecations.
+		if ($string === null) {
+			$string = '';
+		}
+
 		$string = str_replace(self::ESCAPE_LIKE_WILDCARD_MULTIPLE, self::LIKE_WILDCARD_MULTIPLE, $string);
 		$string = str_replace(self::ESCAPE_LIKE_WILDCARD_ONE, self::LIKE_WILDCARD_ONE, $string);
 		return $string;
-	}*/
-	public function escapeLike($string){
-	        $string = str_replace(self::ESCAPE_LIKE_WILDCARD_MULTIPLE, self::LIKE_WILDCARD_MULTIPLE, $string);
-	        $string = str_replace(self::ESCAPE_LIKE_WILDCARD_ONE, self::LIKE_WILDCARD_ONE, $string);
-	        return $string;
-}
+	}
 
 }

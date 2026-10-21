@@ -1,0 +1,3 @@
+PASS name.ksome._text- => (name LIKE some_text*)
+Exception in thread "main" java.lang.AssertionError: name.ka..b: expected (name LIKE a.b); got (name LIKE ab)
+	at ParseCheck.main(ParseCheck.java:8)

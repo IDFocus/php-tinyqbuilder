@@ -1,26 +1,5 @@
-<phpunit 
-    bootstrap="./vendor/autoload.php" 
-    colors="false"
-    beStrictAboutTestsThatDoNotTestAnything="true"
-    checkForUnintentionallyCoveredCode="true"
-    beStrictAboutOutputDuringTests="true"
-    verbose="true"
-    >
-    <testsuites>
-        <testsuite name="IDFocus PHP-TinyQBuilder Test Suite">
-            <directory suffix="Test.php">./tests</directory>
-        </testsuite>
-    </testsuites>
-    <logging>
-        <log type="coverage-text" target="php://stdout"  showOnlySummary="true"/>
-        <log type="coverage-clover" target="build/logs/clover.xml" />
-    </logging>
-    <filter>
-        <whitelist>
-            <directory suffix=".php">./src</directory>
-        </whitelist>
-        <blacklist>
-            <directory suffix=".php">./vendor</directory>
-        </blacklist>
-    </filter>
+<?xml version="1.0"?>
+<phpunit bootstrap="tests/bootstrap.php" cacheResult="false" failOnWarning="true" failOnDeprecation="true" failOnNotice="true" displayDetailsOnTestsThatTriggerWarnings="true" displayDetailsOnTestsThatTriggerDeprecations="true" displayDetailsOnTestsThatTriggerNotices="true" beStrictAboutOutputDuringTests="true">
+    <testsuites><testsuite name="TinyQ builder"><directory>tests</directory></testsuite></testsuites>
+    <php><ini name="error_reporting" value="-1"/></php>
 </phpunit>

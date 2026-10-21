@@ -1,0 +1,123 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "label": "wildcards",
+      "method": "like",
+      "key": "name",
+      "value": "some_text-",
+      "escape": false,
+      "parsed": "(name LIKE some?text*)",
+      "query": "name.ksome_text-"
+    },
+    {
+      "label": "literal wildcard characters",
+      "method": "like",
+      "key": "name",
+      "value": "some_text-",
+      "escape": true,
+      "parsed": "(name LIKE some_text-)",
+      "query": "name.ksome._text.-"
+    },
+    {
+      "label": "dot",
+      "method": "like",
+      "key": "name",
+      "value": "a.b",
+      "escape": false,
+      "parsed": "(name LIKE a.b)",
+      "query": "name.ka....b"
+    },
+    {
+      "label": "multiple dots",
+      "method": "like",
+      "key": "name",
+      "value": "a..b",
+      "escape": false,
+      "parsed": "(name LIKE a..b)",
+      "query": "name.ka........b"
+    },
+    {
+      "label": "dot before literal underscore",
+      "method": "like",
+      "key": "name",
+      "value": "a._",
+      "escape": true,
+      "parsed": "(name LIKE a._)",
+      "query": "name.ka....._"
+    },
+    {
+      "label": "trailing dot",
+      "method": "like",
+      "key": "name",
+      "value": "a.",
+      "escape": false,
+      "parsed": "(name LIKE a.)",
+      "query": "name.ka...."
+    },
+    {
+      "label": "escaped underscore and wildcard suffix",
+      "method": "like",
+      "key": "name",
+      "value": "some_text",
+      "escape": true,
+      "suffix": "-",
+      "parsed": "(name LIKE some_text*)",
+      "query": "name.ksome._text-"
+    },
+    {
+      "label": "dot before literal dash",
+      "method": "like",
+      "key": "name",
+      "value": "a.-",
+      "escape": true,
+      "parsed": "(name LIKE a.-)",
+      "query": "name.ka.....-"
+    },
+    {
+      "label": "equal dot",
+      "method": "equal",
+      "key": "profile.name",
+      "value": "a.b",
+      "escape": false,
+      "parsed": "(profile.name == a.b)",
+      "query": "profile..name.ea..b"
+    },
+    {
+      "label": "equal wildcard punctuation",
+      "method": "equal",
+      "key": "name",
+      "value": "a_-",
+      "escape": false,
+      "parsed": "(name == a_-)",
+      "query": "name.ea_-"
+    },
+    {
+      "label": "unicode",
+      "method": "like",
+      "key": "name",
+      "value": "één.naam",
+      "escape": false,
+      "parsed": "(name LIKE één.naam)",
+      "query": "name.kéén....naam"
+    },
+    {
+      "label": "operator-like text",
+      "method": "like",
+      "key": "name",
+      "value": "a.eadmin",
+      "escape": false,
+      "parsed": "(name LIKE a.eadmin)",
+      "query": "name.ka....eadmin"
+    }
+  ],
+  "parser_sources": {
+    "/Users/sveldhuisen/Development/eclipse_workspace/nl.idfocus.nivo.neat/src/nl/idfocus/nivo/neat/search/filter/client/tinyq/Operator.java": "4154e9b97cb9be663f8e7a8f89a99386a21423bc6add49017c3bafc2bb197559",
+    "/Users/sveldhuisen/Development/eclipse_workspace/nl.idfocus.nivo.neat/src/nl/idfocus/nivo/neat/search/filter/server/tinyq/ExpressionFactory.java": "23d5f786d6501796df5678e991131a5053f38add19b2363a97bd42d5f39c922c",
+    "/Users/sveldhuisen/Development/eclipse_workspace/nl.idfocus.nivo.neat/src/nl/idfocus/nivo/neat/search/filter/server/tinyq/TestExpressionFactory.java": "5a53c7d84acca509c2c458ba2a0fe9cc66db66e797496a8650df56950478c640",
+    "/Users/sveldhuisen/Development/eclipse_workspace/nl.idfocus.nivo.neat/src/nl/idfocus/nivo/neat/search/filter/server/tinyq/Parser.java": "9b26fa7d847c9c690355fbabf9177937824a3705ec11c98fe0b351655be9d331",
+    "/Users/sveldhuisen/Development/eclipse_workspace/nl.idfocus.nivo.neat/src/nl/idfocus/nivo/neat/search/filter/server/tinyq/Scanner.java": "342aee60ad64c22a06beb982bbe17f94feefe0e2d97f41099a101c9ce5652816",
+    "/Users/sveldhuisen/Development/eclipse_workspace/nl.idfocus.nivo.neat/src/nl/idfocus/nivo/neat/search/filter/server/tinyq/Expression.java": "fb70117d613b91140915d1657ac9da79073dd63d2dfce6324dfb4fe35f81eb89",
+    "/Users/sveldhuisen/Development/eclipse_workspace/nl.idfocus.nivo.neat/src/nl/idfocus/nivo/neat/search/filter/server/tinyq/ParsedLikeArgument.java": "4e9335fef1a31012c4364c56dd5a41989d97084563e322e69bad1ff04998bb6a"
+  }
+}

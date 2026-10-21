@@ -1,0 +1,11 @@
+PHPUnit 12.5.40 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.5.11
+Configuration: /Users/sveldhuisen/Development/NIVO/php-tinyqbuilder/phpunit.xml.dist
+
+................................................................. 65 / 84 ( 77%)
+...................                                               84 / 84 (100%)
+
+Time: 00:00.015, Memory: 16.00 MB
+
+OK (84 tests, 145 assertions)

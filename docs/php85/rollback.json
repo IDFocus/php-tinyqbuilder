@@ -1,0 +1,24 @@
+{
+  "backup": "/private/tmp/tinyq-php85-rollback-px61wul_",
+  "files": [
+    "src/TinyQ/Builder.php",
+    "tests/BuilderTest.php",
+    "tests/CompatibilityTest.php",
+    "tests/bootstrap.php",
+    "composer.json",
+    "composer.lock",
+    "phpunit.xml.dist",
+    "README.md",
+    "CHANGELOG.md",
+    "tools/php85-app-filter-check.py",
+    "docs/php85/backend-roundtrip.txt",
+    "docs/php85/php8511-tests.txt",
+    "docs/php85/RESULTS.json",
+    "docs/php85/candidate-app-filters.json",
+    "docs/php85/README.md",
+    "docs/php85/php855-tests.txt",
+    "docs/php85/backend-before-dots.txt",
+    "docs/php85/backend-roundtrip.json",
+    "docs/php85/final-suite-original-package.txt"
+  ]
+}

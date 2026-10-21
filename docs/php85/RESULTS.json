@@ -1,0 +1,44 @@
+{
+  "base_commit": "1123338a04d9bcc514d9349edc6755e3b953c06b",
+  "tested_php": [
+    "8.5.5",
+    "8.5.11"
+  ],
+  "tests": 84,
+  "assertions": 145,
+  "parser_roundtrips": 12,
+  "app_filter_cases": 6,
+  "runtime_source_sha256": "ea34ad101776ad2b4048caa217302549459be459bbf8fc2a7b95c519497657a2",
+  "app_package_unchanged": "idfocus/php-tinyqbuilder 1.0.2; no published replacement yet",
+  "external_writes": false,
+  "legacy_travis_unused_confirmed_by_user": true,
+  "installed_checkout_validation": {
+    "checks": [
+      {
+        "check": "php8511",
+        "exit": 0
+      },
+      {
+        "check": "php855",
+        "exit": 0
+      },
+      {
+        "check": "composer-validate",
+        "exit": 0
+      },
+      {
+        "check": "composer-platform",
+        "exit": 0
+      },
+      {
+        "check": "app-filters",
+        "exit": 0,
+        "stderr": ""
+      }
+    ],
+    "lint_files": 5,
+    "lint_issues": [],
+    "source_sha256": "ea34ad101776ad2b4048caa217302549459be459bbf8fc2a7b95c519497657a2",
+    "composer_lock_sha256": "5629de671aaf9736b360b53a4f640d3367d0d99bdab71900ca40514a1988de6e"
+  }
+}
